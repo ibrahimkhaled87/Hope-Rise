@@ -34,8 +34,46 @@ header nav {
   display: flex;
   align-items: center;
 }
+header nav .mobile-menu:hover {
+  cursor: pointer;
+}
 header nav ul {
-  display: none;
+  transform: translateX(220px);
+  margin-top: 0;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  list-style: none;
+  gap: 2em;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  height: 100vh;
+  padding: 3em;
+  text-align: right;
+  font-weight: 600;
+  transition: all 1s;
+}
+header nav ul .close-menu {
+  font-size: 20px;
+  border: 1px solid white;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  left: 4.2em;
+  margin-bottom: 1em;
+  margin-top: -0.5em;
+}
+header nav ul .close-menu:hover {
+  cursor: pointer;
+}
+header nav .show-hide {
+  transform: translateX(0);
 }
 header .header-cta {
   display: none;
@@ -115,6 +153,4 @@ footer ul li:nth-child(3) img {
 }
 footer button {
   display: none;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

@@ -16,7 +16,8 @@
             </a>
             <nav>
                 <img src="assets/menu.svg" alt="" class="mobile-menu">
-                <ul>
+                <ul class="nav-bar">
+                    <li class="close-menu">x</li>
                     <li>Who We Are</li>
                     <li>What We Do</li>
                     <li>News & Events</li>
@@ -53,6 +54,20 @@
             </button>           
         </footer>
     </div>
+
+
+    <script>
+        menuBtn = document.querySelector(".mobile-menu")
+        closeBtn = document.querySelector(".close-menu")
+        navBar = document.querySelector(".nav-bar")
+
+        menuBtn.addEventListener("click", () => {
+            navBar.classList.add("show-hide")
+        })
+        closeBtn.addEventListener("click", () => {
+            navBar.classList.remove("show-hide")
+        })
+    </script>
     
 </body>
 </html>
