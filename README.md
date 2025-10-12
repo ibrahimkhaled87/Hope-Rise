@@ -1,3 +1,3 @@
 # Hope-Rise
 
-http://ibrahimkhaled87.gitub.io/Hope-Rise
+http://ibrahimkhaled87.github.io/Hope-Rise
