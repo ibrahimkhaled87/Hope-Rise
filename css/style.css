@@ -17,7 +17,7 @@ header {
   align-items: center;
 }
 header img {
-  height: 2.5em;
+  height: 2em;
 }
 header .logo {
   display: flex;
@@ -28,7 +28,7 @@ header .logo {
 header .logo p {
   color: black;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
 }
 header nav {
   display: flex;
@@ -84,7 +84,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin-bottom: 4em;
-  font-size: 30px;
+  font-size: 22px;
   text-align: center;
 }
 main h1 {
@@ -102,12 +102,12 @@ main h1 span {
 }
 main .main-cta {
   display: flex;
-  gap: 1em;
+  gap: 0.5em;
 }
 main .main-cta button {
   background-color: aqua;
   border: 0;
-  width: 10em;
+  width: 7em;
   height: 4em;
   border-radius: 3em;
 }

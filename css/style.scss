@@ -17,7 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     img {
-        height: 2.5em;
+        height: 2em;
     }
 
     .logo {
@@ -28,7 +28,7 @@ header {
         p {
             color: black;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
         }
     }
     nav {
@@ -88,7 +88,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin-bottom: 4em;
-    font-size: 30px;
+    font-size: 22px;
     text-align: center;
     h1 {
         line-height: 1.5em;
@@ -105,16 +105,16 @@ main {
     }
     .main-cta {
         display: flex;
-        gap: 1em;
+        gap: 0.5em;
         button {
             background-color: aqua;
             border: 0;
-            width: 10em;
+            width: 7em;
             height: 4em;
             border-radius: 3em;
             &:hover {
                 cursor: pointer;
-            } 
+            }
 
             &:nth-child(2) {
                 display: flex;
