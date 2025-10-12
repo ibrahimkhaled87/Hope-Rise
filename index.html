@@ -9,7 +9,6 @@
 <body>
 
     <div class="wrap">
-
         <header>
             <a href="#" class="logo">
                 <img src="assets/logo.svg" alt="">
@@ -31,29 +30,31 @@
             </div>
         </header>
 
-        <main>
-            <h1>Hope <span></span> Rise is Support</h1>
-            <div class="main-cta">
-                <button>Donate</button>
-                <button>
-                    I Need Help <img src="assets/arrow-topright.svg" alt="">
-                </button>
-            </div>
-        </main>
 
-        <footer>
-            <button>
-                <img src="" alt=""> Quick Donate
-            </button>
-            <ul>
-                <li><img src="assets/gofundme.png" alt=""></li>
-                <li><img src="assets/cancerresearchuk.png" alt=""></li>
-                <li><img src="assets/medtronic.png" alt="" class="last"></li>
-            </ul>
-            <button>
-                Scroll Down
-            </button>           
-        </footer>
+        <div class="slide1">
+            <main>
+                <h1>Hope <span></span> Rise is Support</h1>
+                <div class="main-cta">
+                    <button>Donate</button>
+                    <button>
+                        I Need Help <img src="assets/arrow-topright.svg" alt="">
+                    </button>
+                </div>
+            </main>
+            <footer>
+                <button>
+                    <img src="" alt=""> Quick Donate
+                </button>
+                <ul>
+                    <li><img src="assets/gofundme.png" alt=""></li>
+                    <li><img src="assets/cancerresearchuk.png" alt=""></li>
+                    <li><img src="assets/medtronic.png" alt="" class="last"></li>
+                </ul>
+                <button>
+                    Scroll Down
+                </button>
+            </footer>
+        </div>
     </div>
 
 
@@ -67,6 +68,25 @@
         })
         closeBtn.addEventListener("click", () => {
             navBar.classList.remove("show-hide")
+        })
+
+
+        slide1 = document.querySelector(".slide1")
+        let currentSlide = slide1
+        let lastScrollTop = 0
+        let scrollDirection = 0
+        window.addEventListener("scroll", () => {
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if(currentScrollTop < lastScrollTop) {
+                scrollDirection = "up"
+                currentSlide.classList.remove("hide-slide")
+
+            }
+            else {
+                scrollDirection = "down"
+                currentSlide.classList.add("hide-slide")
+            }
+            lastScrollTop = currentScrollTop
         })
     </script>
     

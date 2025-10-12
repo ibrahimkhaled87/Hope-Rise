@@ -4,8 +4,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: "poppins", sans-serif;
-    background: linear-gradient(white, wheat 70%);
+    background: linear-gradient(white, wheat 100%);
     background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .wrap {
@@ -13,9 +14,11 @@ body {
 }
 
 header {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: -0.5em;
     img {
         height: 2em;
     }
@@ -83,82 +86,90 @@ header {
     }
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4em;
-    font-size: 18px;
-    text-align: center;
-    h1 {
-        line-height: 1.5em;
-        span {
-            display: inline-block;
-            width: 3em;
-            height: 2em;
-            background-color: aqua;
-            position: relative;
-            top: 0.76em;
-            border-radius: 0.9em;
-            z-index: -1;
-        }
-    }
-    .main-cta {
+.slide1 {
+    main {
         display: flex;
-        gap: 0.5em;
-        button {
-            background-color: aqua;
-            border: 0;
-            width: 7em;
-            height: 4em;
-            border-radius: 3em;
-            &:hover {
-                cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4em;
+        font-size: 22px;
+        text-align: center;
+        h1 {
+            line-height: 1.5em;
+            span {
+                display: inline-block;
+                width: 3em;
+                height: 2em;
+                background-color: aqua;
+                position: relative;
+                top: 0.76em;
+                border-radius: 0.9em;
+                z-index: -1;
             }
-
-            &:nth-child(2) {
-                display: flex;
-                width: 13em;
-                justify-content: center;
-                align-items: center;
-                gap: 1em;
-                background-color: transparent;
-                img{
-                    height: 2em;
-                    padding: 1em;
-                    border: 2px solid black;
-                    border-radius: 50%;
+        }
+        .main-cta {
+            display: flex;
+            gap: 0.5em;
+            button {
+                background-color: aqua;
+                border: 0;
+                width: 7em;
+                height: 4em;
+                border-radius: 3em;
+                &:hover {
+                    cursor: pointer;
+                }
+                &:nth-child(2) {
+                    display: flex;
+                    width: 13em;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1em;
+                    background-color: transparent;
+                    img{
+                        height: 2em;
+                        padding: 1em;
+                        border: 2px solid black;
+                        border-radius: 50%;
+                    }
                 }
             }
         }
     }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid black;
+        padding-top: 2em;
+        justify-content: space-between;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+            padding-left: 0;
+            img {
+                height: 3em;
+                margin: 1em;
+            }
+            li {
+                &:nth-child(3) img{
+                    height: 2em;
+                }
+            }
+        }
+        button {
+            display: none;
+        }
+    }
+
+    transition: all 2s;
 }
 
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid black;
-    padding-top: 1em;
-    justify-content: space-between;
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        list-style: none;
-        padding-left: 0;
-        img {
-            height: 3em;
-            margin: 1em;
-        }
-        li {
-            &:nth-child(3) img{
-                height: 2em;
-            }
-        }
-    }
-    button {
-        display: none;
-    }
+.hide-slide {
+    display: fixed;
+    transform: translateY(-150%);
 }
