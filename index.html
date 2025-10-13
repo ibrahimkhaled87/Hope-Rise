@@ -30,13 +30,12 @@
             </div>
         </header>
 
-
         <div class="slide1">
             <main>
                 <h1>Hope <span></span> Rise is Support</h1>
                 <div class="main-cta">
                     <button>Donate</button>
-                    <button>
+                    <button class="transparent-button">
                         I Need Help <img src="assets/arrow-topright.svg" alt="">
                     </button>
                 </div>
@@ -55,10 +54,72 @@
                 </button>
             </footer>
         </div>
+        
+        <div class="slide2 hide-slide">
+            <main>
+                <div>
+                    <p>What We Do</p>
+                </div>
+                <h1>Providing Hope And Help During Challenging Times</h1>
+                <div class="main-cta">
+                    <button class="transparent-button">
+                        I Need Help <img src="assets/arrow-topright.svg" alt="">
+                    </button>
+                </div>
+                <div class="card-area">
+                    <div class="card one">
+                        <img src="" alt="" class="up">
+                        <h4>Make a Donation</h4>
+                        <p>Contribute today to help fund treatments, research, and 
+                            essential support services for those battling cancer.</p>
+                        <div class="card-footer">
+                            <div class="left"></div>
+                            <img src="" alt="" class="arrow">
+                        </div>
+                    </div>
+                    <div class="card two">
+                        <img src="" alt="" class="up">
+                        <h4>Get Support</h4>
+                        <p>Access vital resources, financial aid, and councling for 
+                            cancer patients and their families in their time of need.</p>
+                        <div class="card-footer">
+                            <div class="left"></div>
+                            <img src="" alt="" class="arrow">
+                        </div>
+                    </div>
+                    <div class="card three">
+                        <img src="" alt="" class="up">
+                        <h4>Become a Volunteer</h4>
+                        <p>Join our team of volunteers to support cancer patients, 
+                            assist with community outreach, and make a positive impact</p>
+                        <div class="card-footer">
+                            <div class="left"></div>
+                            <img src="" alt="" class="arrow">
+                        </div>
+                    </div>
+                    <div class="card one">
+                        <img src="" alt="" class="up">
+                        <h4>N/A</h4>
+                        <p>N/A</p>
+                        <div class="card-footer">
+                            <div class="left"></div>
+                            <img src="" alt="" class="arrow">
+                        </div>
+                    </div>
+                </div>
+            
+            
+            </main>
+
+
+        </div>
     </div>
 
 
+
+
     <script>
+        // Menu Button Effect
         menuBtn = document.querySelector(".mobile-menu")
         closeBtn = document.querySelector(".close-menu")
         navBar = document.querySelector(".nav-bar")
@@ -71,20 +132,33 @@
         })
 
 
+        // Slide Effect
         slide1 = document.querySelector(".slide1")
-        let currentSlide = slide1
+        slide2 = document.querySelector(".slide2")
+        const slideArr = [slide1, slide2] 
+
+        let i = 0
         let lastScrollTop = 0
         let scrollDirection = 0
         window.addEventListener("scroll", () => {
             const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if(currentScrollTop < lastScrollTop) {
-                scrollDirection = "up"
-                currentSlide.classList.remove("hide-slide")
-
+                if (i > 0) {
+                    scrollDirection = "up"
+                    slideArr[i].classList.add("hide-slide")
+                    i = i-1
+                    slideArr[i].classList.remove("hide-slide")
+                    console.log("slide up", slideArr[i])
+                }
             }
             else {
                 scrollDirection = "down"
-                currentSlide.classList.add("hide-slide")
+                if(i < slideArr.length-1) {
+                    slideArr[i].classList.add("hide-slide")
+                    i = i+1
+                    slideArr[i].classList.remove("hide-slide")
+                    console.log("slide down", slideArr[i])
+                }
             }
             lastScrollTop = currentScrollTop
         })
