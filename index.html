@@ -200,13 +200,24 @@
                 // 2 - background animation
                 wheat = document.querySelector(".slide3 .wheat")
                 if(j == arr.length) {
-                    wheat.style.animation = "circle-change 1s alternate 2"
+                    wheat.style.animation = "circle-change 1s alternate 2"                
                 }
-
             }, 100)
+            wheat.style.animation = "none"                
         }
-        myLoop()
-
+        slide3 = document.querySelector(".slide3")
+        let observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log("slide3 is in viewport")
+                    myLoop();
+                }
+                else {
+                    j = 0
+                }
+            })
+        }, {})
+        observer.observe(slide3)
 
 
 
