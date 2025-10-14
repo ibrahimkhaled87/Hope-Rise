@@ -118,14 +118,19 @@
                 <h1>Together, We're Making A Difference</h1>
                 <div class="statistics">
                     <div class="statistic one">
-                        <p>31,542</p>
+                        <p>31,500</p>
                         People Recieved Help
                     </div>
                 </div>
-                <div class="circle"></div>
+                <div class="circle wheat">
+                    <div class="circle white">
 
+                    </div>
+                </div>
             </main>
         </div>
+
+
     </div>
 
 
@@ -148,7 +153,7 @@
         // Slide Effect
         slide1 = document.querySelector(".slide1")
         slide2 = document.querySelector(".slide2")
-        const slideArr = [slide1, slide2] 
+        const slideArr = [slide1, slide2]
 
         let i = 0
         let lastScrollTop = 0
@@ -175,6 +180,37 @@
             }
             lastScrollTop = currentScrollTop
         })
+
+
+        // Slide3 Animations
+        // 1 - statistic animation
+        statistic = document.querySelector(".slide3 .statistic p")
+        let arr = ["31,529","31,530",
+        "31,531","31,532","31,533","31,534","31,535","31,536","31,537",
+        "31,538","31,539","31,540","31,541","31,542","31,543","31,544"]
+        let j = 0
+        function myLoop() {
+            setTimeout(() => {
+                statistic.innerText = arr[j]
+                j++
+                if(j < arr.length) {
+                    myLoop();
+                }
+                
+                // 2 - background animation
+                wheat = document.querySelector(".slide3 .wheat")
+                if(j == arr.length) {
+                    wheat.style.animation = "circle-change 1s"
+                }
+
+            }, 100)
+        }
+        myLoop()
+
+
+
+
+
     </script>
     
 </body>

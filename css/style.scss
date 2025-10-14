@@ -186,6 +186,7 @@ footer {
     overflow-y: clip;
 }
 
+
 .slide2, .slide3 {
     main {
         font-size: smaller;
@@ -232,13 +233,14 @@ footer {
 
 
 
+
 .slide3 {
+    overflow-x: hidden;
     div {
         p {
             background-color: rgb(205, 205, 205);
         }
     }
-
     .statistics {
         p {
             color: rgb(0, 161, 0);
@@ -247,15 +249,37 @@ footer {
             font-size: 6em;
             font-weight: 600;
         }
-        margin-bottom: 20em;
+        margin-bottom: 12em;
     }
-
     .circle {
+        z-index: -1;
         width: 200vw;
         height: 200vw;
         background-color: wheat;
         border-radius: 50%;
         position: absolute;
-        top: 75vh;
+        top: calc(80vh);
+        .white {
+            top: 80vh;
+            background-color: white;
+            position: relative;
+        }
     }
+    .wheat {
+        animation: none;
+    }
+
+    @keyframes circle-change {
+        from {
+            top: calc(80vh);
+        }
+        to {
+            top: calc(-5vh);
+        }
+    }
+
+}
+
+.slide2 {
+    display: none;
 }
