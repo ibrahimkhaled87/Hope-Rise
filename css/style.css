@@ -159,7 +159,7 @@ footer button {
   display: none;
 }
 
-.slide1, .slide2 {
+.slide1, .slide2, .slide3 {
   transition: all 2s;
   height: 100vh;
   display: flex;
@@ -167,19 +167,20 @@ footer button {
   justify-content: center;
   position: relative;
   bottom: 5em;
+  overflow-y: clip;
 }
 
-.slide2 main {
+.slide2 main, .slide3 main {
   font-size: smaller;
   margin-bottom: 0;
 }
-.slide2 main p {
+.slide2 main p, .slide3 main p {
   background-color: aqua;
   padding: 0.3em 0.7em;
   border-radius: 0.5em;
   margin-top: 3em;
 }
-.slide2 .card-area {
+.slide2 .card-area, .slide3 .card-area {
   margin: 2em 0;
   padding-top: 1em;
   display: grid;
@@ -187,7 +188,7 @@ footer button {
   grid-template-rows: auto auto;
   gap: 1em;
 }
-.slide2 .card-area .card {
+.slide2 .card-area .card, .slide3 .card-area .card {
   display: flex;
   flex-direction: column;
   height: 12em;
@@ -199,14 +200,36 @@ footer button {
   text-align: left;
   padding: 1.5em;
 }
-.slide2 .card-area .card:hover {
+.slide2 .card-area .card:hover, .slide3 .card-area .card:hover {
   background: linear-gradient(wheat, white);
   cursor: pointer;
   font-size: 100%;
 }
-.slide2 .card-area .card p {
+.slide2 .card-area .card p, .slide3 .card-area .card p {
   background-color: transparent;
   margin: 0;
   padding: 0;
   font-size: smaller;
+}
+
+.slide3 div p {
+  background-color: rgb(205, 205, 205);
+}
+.slide3 .statistics {
+  margin-bottom: 20em;
+}
+.slide3 .statistics p {
+  color: rgb(0, 161, 0);
+  background-color: transparent;
+  margin: 0;
+  font-size: 6em;
+  font-weight: 600;
+}
+.slide3 .circle {
+  width: 200vw;
+  height: 200vw;
+  background-color: wheat;
+  border-radius: 50%;
+  position: absolute;
+  top: 75vh;
 }/*# sourceMappingURL=style.css.map */

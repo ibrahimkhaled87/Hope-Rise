@@ -175,7 +175,7 @@ footer {
 
 
 // Slide-Specific Code
-.slide1, .slide2{
+.slide1, .slide2, .slide3{
     transition: all 2s;
     height: calc(100vh);
     display: flex;
@@ -183,9 +183,10 @@ footer {
     justify-content: center;
     position: relative;
     bottom: 5em;
+    overflow-y: clip;
 }
 
-.slide2 {
+.slide2, .slide3 {
     main {
         font-size: smaller;
         p {
@@ -230,8 +231,31 @@ footer {
 }
 
 
-// JavaScript Classes
-// .hide-slide {
-//     display: fixed;
-//     // transform: translateY(-200vh);
-// }
+
+.slide3 {
+    div {
+        p {
+            background-color: rgb(205, 205, 205);
+        }
+    }
+
+    .statistics {
+        p {
+            color: rgb(0, 161, 0);
+            background-color: transparent;
+            margin: 0;
+            font-size: 6em;
+            font-weight: 600;
+        }
+        margin-bottom: 20em;
+    }
+
+    .circle {
+        width: 200vw;
+        height: 200vw;
+        background-color: wheat;
+        border-radius: 50%;
+        position: absolute;
+        top: 75vh;
+    }
+}
