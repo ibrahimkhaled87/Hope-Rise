@@ -5,16 +5,15 @@ body {
   font-family: "poppins", sans-serif;
   background: linear-gradient(white, wheat 100%);
   background-repeat: no-repeat;
-  height: 100vh;
 }
 
 .wrap {
   margin: 2em;
+  height: calc(100vh - 3.6em);
 }
 
 header {
-  position: fixed;
-  width: calc(100vw - 4em);
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -162,18 +161,14 @@ footer button {
 
 .slide1, .slide2 {
   transition: all 2s;
-}
-
-.slide1 {
-  padding-top: 4em;
-}
-
-.slide2 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
-  top: 15vh;
-  padding-top: 4em;
-  padding-bottom: 2em;
+  bottom: 5em;
 }
+
 .slide2 main {
   font-size: smaller;
   margin-bottom: 0;
@@ -214,8 +209,4 @@ footer button {
   margin: 0;
   padding: 0;
   font-size: smaller;
-}
-
-.hide-slide {
-  display: fixed;
 }/*# sourceMappingURL=style.css.map */
