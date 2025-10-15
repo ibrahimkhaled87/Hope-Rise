@@ -255,10 +255,6 @@ footer button {
   }
 }
 
-.slide2, .slide3 {
-  display: none;
-}
-
 .slide4 {
   background: linear-gradient(wheat, rgb(255, 236, 202));
   display: flex;
@@ -273,6 +269,15 @@ footer button {
   background: linear-gradient(rgb(255, 240, 214), transparent 99%);
   -webkit-mask-image: url("../assets/cloud.svg"); /* For WebKit browsers */
   mask-image: url("../assets/cloud.svg");
+  animation: move-cloud 4s alternate infinite ease-in-out;
+}
+@keyframes move-cloud {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(-5em) translateY(-8em);
+  }
 }
 .slide4 .form {
   z-index: 1;
@@ -328,7 +333,7 @@ footer button {
 }
 .slide4 .form form .amount-currency #currency {
   position: absolute;
-  left: 15.5em;
+  left: 15.6em;
   background-color: aqua;
   border: 0;
   padding: 0.4em;
@@ -365,7 +370,7 @@ footer button {
   flex-direction: column;
 }
 .slide4 .form form .submit {
-  margin-top: 0.5em;
+  margin-top: 1em;
   grid-template-columns: auto auto;
 }
 .slide4 .form form .submit button {
