@@ -123,11 +123,59 @@
                     </div>
                 </div>
                 <div class="circle wheat">
-                    <div class="circle white">
-
-                    </div>
+                    <div class="circle white"></div>
                 </div>
             </main>
+        </div>
+
+        <div class="slide4">
+            <div class="contain"></div>
+            <main>
+                <div>
+                    <p>Donation</p>
+                </div>
+                <h1>Your Support Makes <br>
+                    A Life-Changing Impact</h1>
+            </main>
+            <div class="form">
+                <form action="#" method="">
+                    <h4>Choose amount</h4>
+                    <div class="subscription">
+                        <h5>One-Time Donation</h5>
+                        <div class="toggle">
+                            <div class="dot"></div>
+                        </div>
+                        <h5>Monthly Support</h5>
+                    </div>
+
+                    <input type="text" placeholder="Enter Amount">
+                    <select name="currency" id="currency">
+                        <option value="USD">USD</option>
+                        <option value="EGP">EGP</option>
+                    </select>
+                    <div class="button-area">
+                        <button type="button">$10</button>
+                        <button type="button">$25</button>
+                        <button type="button">$50</button>
+                        <button type="button">$100</button>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="anon" id="anon">
+                        Donate Anonymously
+                    </div>
+                    <input type="text" name="donator" id="donator" placeholder="Name">
+                    <div class="checkbox">
+                        <input type="checkbox" name="anon" id="anon"> 
+                        I Agree To The Terms
+                    </div>
+
+                    <div class="button-area submit">
+                        <button type="submit">Donate</button>
+                        <button type="button">Use QR Code</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
 
@@ -220,8 +268,27 @@
         observer.observe(slide3)
 
 
-
-
+        // Form toggle effect
+        toggle = document.querySelector(".slide4 .toggle")
+        dot = document.querySelector(".slide4 .dot")
+        subLeft = document.querySelector(".slide4 .subscription h5:nth-of-type(1)")
+        subRight = document.querySelector(".slide4 .subscription h5:nth-of-type(2)")
+        c = 0
+        toggle.addEventListener("click", () => {
+            dot.classList.toggle("move-dot")
+            if(c==0) {
+                subLeft.style.color = "grey"
+                subRight.style.color = "black"
+                c=1
+            }
+            else {
+                subLeft.style.color = "black"
+                subRight.style.color = "grey"
+                c=0
+            }
+        })
+        
+    
     </script>
     
 </body>

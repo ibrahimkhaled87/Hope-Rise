@@ -159,7 +159,7 @@ footer button {
   display: none;
 }
 
-.slide1, .slide2, .slide3 {
+.slide1, .slide2, .slide3, .slide4 {
   transition: all 2s;
   height: 100vh;
   display: flex;
@@ -170,17 +170,18 @@ footer button {
   overflow-y: clip;
 }
 
-.slide2 main, .slide3 main {
+.slide2 main, .slide3 main, .slide4 main {
+  z-index: 1;
   font-size: smaller;
   margin-bottom: 0;
 }
-.slide2 main p, .slide3 main p {
+.slide2 main p, .slide3 main p, .slide4 main p {
   background-color: aqua;
   padding: 0.3em 0.7em;
   border-radius: 0.5em;
   margin-top: 3em;
 }
-.slide2 .card-area, .slide3 .card-area {
+.slide2 .card-area, .slide3 .card-area, .slide4 .card-area {
   margin: 2em 0;
   padding-top: 1em;
   display: grid;
@@ -188,7 +189,7 @@ footer button {
   grid-template-rows: auto auto;
   gap: 1em;
 }
-.slide2 .card-area .card, .slide3 .card-area .card {
+.slide2 .card-area .card, .slide3 .card-area .card, .slide4 .card-area .card {
   display: flex;
   flex-direction: column;
   height: 12em;
@@ -200,12 +201,12 @@ footer button {
   text-align: left;
   padding: 1.5em;
 }
-.slide2 .card-area .card:hover, .slide3 .card-area .card:hover {
+.slide2 .card-area .card:hover, .slide3 .card-area .card:hover, .slide4 .card-area .card:hover {
   background: linear-gradient(wheat, white);
   cursor: pointer;
   font-size: 100%;
 }
-.slide2 .card-area .card p, .slide3 .card-area .card p {
+.slide2 .card-area .card p, .slide3 .card-area .card p, .slide4 .card-area .card p {
   background-color: transparent;
   margin: 0;
   padding: 0;
@@ -252,4 +253,129 @@ footer button {
   to {
     top: -5vh;
   }
+}
+
+.slide4 {
+  background: linear-gradient(wheat, rgb(255, 236, 202));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.slide4 .contain {
+  z-index: 0;
+  height: 90%;
+  width: 150%;
+  position: absolute;
+  background: linear-gradient(rgb(255, 240, 214), transparent 99%);
+  -webkit-mask-image: url("../assets/cloud.svg"); /* For WebKit browsers */
+  mask-image: url("../assets/cloud.svg");
+}
+.slide4 .form {
+  z-index: 1;
+  background-color: white;
+  color: black;
+  padding: 2em;
+  border-radius: 2em;
+}
+.slide4 .form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+.slide4 .form form h4 {
+  margin: 0;
+}
+.slide4 .form form .subscription {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.slide4 .form form .subscription .toggle {
+  font-size: smaller;
+  width: 3em;
+  height: 1.5em;
+  background-color: rgb(147, 255, 147);
+  border-radius: 1em;
+  padding: 0.2em;
+  cursor: pointer;
+}
+.slide4 .form form .subscription .toggle .dot {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: green;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.slide4 .form form h5 {
+  transition: all 0.1s;
+}
+.slide4 .form form h5:nth-of-type(2) {
+  color: grey;
+}
+.slide4 .form form input {
+  border: 1px solid grey;
+  width: calc(100% - 2em);
+  border-radius: 1em;
+  padding: 0.6em 1em;
+}
+.slide4 .form form #currency {
+  position: relative;
+  left: 9.8em;
+  bottom: 2.9em;
+  background-color: aqua;
+  border: 0;
+  padding: 0.4em;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.slide4 .form form .button-area {
+  margin-top: -1.5em;
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+  gap: 1em;
+}
+.slide4 .form form .button-area button {
+  border-radius: 1em;
+  border: 1px solid grey;
+  background-color: transparent;
+  padding: 0.6em 0;
+}
+.slide4 .form form .submit {
+  margin-top: 1em;
+  grid-template-columns: auto auto;
+}
+.slide4 .form form .submit button {
+  font-weight: 600;
+  border: 0;
+  padding: 0.8em 0;
+}
+.slide4 .form form .submit button:nth-of-type(1) {
+  background-color: green;
+  color: white;
+}
+.slide4 .form form .submit button:nth-of-type(2) {
+  background-color: rgb(145, 255, 145);
+  color: green;
+}
+.slide4 .form form .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1.5em;
+  gap: 0.5em;
+  margin-left: -8em;
+}
+.slide4 .form form .checkbox input {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.move-dot {
+  transform: translateX(1.4em);
+}
+
+.toggle-color {
+  color: grey;
 }/*# sourceMappingURL=style.css.map */

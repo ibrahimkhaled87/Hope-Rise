@@ -175,7 +175,7 @@ footer {
 
 
 // Slide-Specific Code
-.slide1, .slide2, .slide3{
+.slide1, .slide2, .slide3, .slide4{
     transition: all 2s;
     height: calc(100vh);
     display: flex;
@@ -187,8 +187,9 @@ footer {
 }
 
 
-.slide2, .slide3 {
+.slide2, .slide3, .slide4 {
     main {
+        z-index: 1;
         font-size: smaller;
         p {
             background-color: aqua;
@@ -277,5 +278,138 @@ footer {
             top: calc(-5vh);
         }
     }
+}
 
+
+.slide4 {
+    background: linear-gradient(wheat, rgb(255, 236, 202));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .contain {
+        z-index: 0;
+        height: 90%;
+        width: 150%;
+        position: absolute;
+        background: linear-gradient(rgb(255, 240, 214), transparent 99%);
+        -webkit-mask-image: url('../assets/cloud.svg'); /* For WebKit browsers */
+        mask-image: url('../assets/cloud.svg');
+    }
+    .form {
+        z-index: 1;
+        background-color: white;
+        color: black;
+        padding: 2em;
+        border-radius: 2em;
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5em;
+            h4 {
+                margin: 0;
+            }
+            .subscription {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                .toggle {
+                    font-size: smaller;
+                    width: 3em;
+                    height: 1.5em;
+                    background-color: rgb(147, 255, 147);
+                    border-radius: 1em;
+                    padding: 0.2em;
+                    cursor: pointer;
+                    .dot {
+                        width: 1.5em;
+                        height: 1.5em;
+                        background-color: green;
+                        border-radius: 50%;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+            h5 {
+                transition: all 0.1s;
+                &:nth-of-type(2) {
+                    color: grey;
+                }
+            }
+
+            input {
+                border: 1px solid grey;
+                width: calc(100% - 2em);
+                border-radius: 1em;
+                padding: 0.6em 1em;
+            }
+            #currency {
+                position: relative;
+                left: 9.8em;
+                bottom: 2.9em;
+                background-color: aqua;
+                border: 0;
+                padding: 0.4em;
+                border-radius: 1em;
+                cursor: pointer;
+            }
+
+            .button-area {
+                margin-top: -1.5em;
+                display: grid;
+                width: 100%;
+                grid-template-columns: auto auto auto auto;
+                gap: 1em;
+                button {
+                    border-radius: 1em;
+                    border: 1px solid grey;
+                    background-color: transparent;
+                    padding: 0.6em 0;
+                }
+            }
+            .submit {
+                margin-top: 1em;
+                grid-template-columns: auto auto;
+                button {
+                    font-weight: 600;
+                    border: 0;
+                    padding: 0.8em 0;
+                    &:nth-of-type(1) {
+                        background-color: green;
+                        color: white;
+                    }
+                    &:nth-of-type(2) {
+                        background-color: rgb(145, 255, 145);
+                        color: green;
+                    }
+                }
+            }
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin-top: 1.5em;
+                gap: 0.5em;
+                margin-left: -8em;
+                input {
+                    width: fit-content;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+
+// JavaScript Effect Classes
+.move-dot {
+    transform: translateX(1.4em);
+}
+.toggle-color {
+    color: grey;
 }
