@@ -134,8 +134,7 @@
                 <div>
                     <p>Donation</p>
                 </div>
-                <h1>Your Support Makes <br>
-                    A Life-Changing Impact</h1>
+                <h1>Your Support Makes A Life-Changing Impact</h1>
             </main>
             <div class="form">
                 <form action="#" method="">
@@ -148,11 +147,13 @@
                         <h5>Monthly Support</h5>
                     </div>
 
-                    <input type="text" placeholder="Enter Amount">
-                    <select name="currency" id="currency">
-                        <option value="USD">USD</option>
-                        <option value="EGP">EGP</option>
-                    </select>
+                    <div class="amount-currency">
+                        <input type="text" placeholder="Enter Amount">
+                        <select name="currency" id="currency">
+                            <option value="USD">USD</option>
+                            <option value="EGP">EGP</option>
+                        </select>
+                    </div>
                     <div class="button-area">
                         <button type="button">$10</button>
                         <button type="button">$25</button>
@@ -160,16 +161,18 @@
                         <button type="button">$100</button>
                     </div>
 
-                    <div class="checkbox">
-                        <input type="checkbox" name="anon" id="anon">
-                        Donate Anonymously
+                    <div class="donator-name">
+                        <div class="checkbox">
+                            <input type="checkbox" name="anon" id="anon">
+                            Donate Anonymously
+                        </div>
+                        <input type="text" name="donator" id="donator" placeholder="Name">
                     </div>
-                    <input type="text" name="donator" id="donator" placeholder="Name">
+                    
                     <div class="checkbox">
                         <input type="checkbox" name="anon" id="anon"> 
                         I Agree To The Terms
                     </div>
-
                     <div class="button-area submit">
                         <button type="submit">Donate</button>
                         <button type="button">Use QR Code</button>

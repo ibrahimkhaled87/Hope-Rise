@@ -280,6 +280,9 @@ footer {
     }
 }
 
+.slide2, .slide3 {
+    display: none;
+}
 
 .slide4 {
     background: linear-gradient(wheat, rgb(255, 236, 202));
@@ -295,13 +298,15 @@ footer {
         -webkit-mask-image: url('../assets/cloud.svg'); /* For WebKit browsers */
         mask-image: url('../assets/cloud.svg');
     }
+
     .form {
         z-index: 1;
         background-color: white;
         color: black;
         padding: 2em;
         border-radius: 2em;
-        
+        font-size: smaller;
+    
         form {
             display: flex;
             flex-direction: column;
@@ -330,30 +335,40 @@ footer {
                         transition: all 0.5s;
                     }
                 }
-            }
-            h5 {
-                transition: all 0.1s;
-                &:nth-of-type(2) {
-                    color: grey;
+                h5 {
+                    transition: all 0.1s;
+                    &:nth-of-type(2) {
+                        color: grey;
+                    }
                 }
             }
 
+
+            .amount-currency {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                margin-bottom: 2em;
+                #currency {
+                    position: absolute;
+                    left: 15.5em;
+                    background-color: aqua;
+                    border: 0;
+                    padding: 0.4em;
+                    border-radius: 1em;
+                    cursor: pointer;
+                }
+            }
             input {
                 border: 1px solid grey;
-                width: calc(100% - 2em);
+                width: 100%;
                 border-radius: 1em;
                 padding: 0.6em 1em;
+                margin: 0;
             }
-            #currency {
-                position: relative;
-                left: 9.8em;
-                bottom: 2.9em;
-                background-color: aqua;
-                border: 0;
-                padding: 0.4em;
-                border-radius: 1em;
-                cursor: pointer;
-            }
+
 
             .button-area {
                 margin-top: -1.5em;
@@ -366,10 +381,21 @@ footer {
                     border: 1px solid grey;
                     background-color: transparent;
                     padding: 0.6em 0;
+                    cursor: pointer;
                 }
             }
+
+            .donator-name {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+                width: calc(100% - 2em);
+                flex-direction: column;
+            }
+
             .submit {
-                margin-top: 1em;
+                margin-top: 0.5em;
                 grid-template-columns: auto auto;
                 button {
                     font-weight: 600;

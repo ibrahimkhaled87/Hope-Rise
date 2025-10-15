@@ -255,6 +255,10 @@ footer button {
   }
 }
 
+.slide2, .slide3 {
+  display: none;
+}
+
 .slide4 {
   background: linear-gradient(wheat, rgb(255, 236, 202));
   display: flex;
@@ -276,6 +280,7 @@ footer button {
   color: black;
   padding: 2em;
   border-radius: 2em;
+  font-size: smaller;
 }
 .slide4 .form form {
   display: flex;
@@ -307,27 +312,35 @@ footer button {
   border-radius: 50%;
   transition: all 0.5s;
 }
-.slide4 .form form h5 {
+.slide4 .form form .subscription h5 {
   transition: all 0.1s;
 }
-.slide4 .form form h5:nth-of-type(2) {
+.slide4 .form form .subscription h5:nth-of-type(2) {
   color: grey;
 }
-.slide4 .form form input {
-  border: 1px solid grey;
-  width: calc(100% - 2em);
-  border-radius: 1em;
-  padding: 0.6em 1em;
-}
-.slide4 .form form #currency {
+.slide4 .form form .amount-currency {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  left: 9.8em;
-  bottom: 2.9em;
+  width: 100%;
+  margin-bottom: 2em;
+}
+.slide4 .form form .amount-currency #currency {
+  position: absolute;
+  left: 15.5em;
   background-color: aqua;
   border: 0;
   padding: 0.4em;
   border-radius: 1em;
   cursor: pointer;
+}
+.slide4 .form form input {
+  border: 1px solid grey;
+  width: 100%;
+  border-radius: 1em;
+  padding: 0.6em 1em;
+  margin: 0;
 }
 .slide4 .form form .button-area {
   margin-top: -1.5em;
@@ -341,9 +354,18 @@ footer button {
   border: 1px solid grey;
   background-color: transparent;
   padding: 0.6em 0;
+  cursor: pointer;
+}
+.slide4 .form form .donator-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: calc(100% - 2em);
+  flex-direction: column;
 }
 .slide4 .form form .submit {
-  margin-top: 1em;
+  margin-top: 0.5em;
   grid-template-columns: auto auto;
 }
 .slide4 .form form .submit button {
