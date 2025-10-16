@@ -117,7 +117,12 @@ childInfoAll = document.querySelectorAll(".slide5 .card .info")
 cardAll = document.querySelectorAll(".slide5 .card")
 
 cardSlider = document.querySelector(".slide5 .card-slider")
-sliderTransformValues = [5, -11, -27, -44]
+sliderTransformValues = [
+    "calc(-7em + 50%)",
+    "calc(-7em + 50% - 1em - 14em)",
+    "calc(-7em + 50% - 2em - 28em)",
+    "calc(-7em + 50% - 3em - 42em)"
+]
 
 
 for(let i=0; i<cardAll.length; i++) {
@@ -125,7 +130,7 @@ for(let i=0; i<cardAll.length; i++) {
         childImgAll[i].style.filter = "none";
         childInfoAll[i].style.animation = "card-info 1s forwards";
         cardAll[i].style.animation = "card 1s forwards";
-        cardSlider.style.transform = "translateX("+sliderTransformValues[i]+"em)"
+        cardSlider.style.transform = "translateX("+sliderTransformValues[i]+")";
     })
     childImgAll[i].addEventListener("mouseleave", () => {
         childImgAll[i].style.filter = "grayscale(100%)";
