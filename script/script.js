@@ -112,17 +112,24 @@ toggle.addEventListener("click", () => {
 
 
 // card image effect
-childImg = document.querySelector(".slide5 .card img")
-childInfo = document.querySelector(".slide5 .card .info")
-card = document.querySelector(".slide5 .card")
+childImgAll = document.querySelectorAll(".slide5 .card img")
+childInfoAll = document.querySelectorAll(".slide5 .card .info")
+cardAll = document.querySelectorAll(".slide5 .card")
 
-childImg.addEventListener("mouseenter", () => {
-    childImg.style.filter = "none";
-    childInfo.style.animation = "card-info 1s forwards";
-    card.style.animation = "card 1s forwards";
-})
-childImg.addEventListener("mouseleave", () => {
-    childImg.style.filter = "grayscale(100%)";
-    childInfo.style.animation = "card-info-reverse 1s forwards";
-    card.style.animation = "card-reverse 1s forwards";
-})
+cardSlider = document.querySelector(".slide5 .card-slider")
+sliderTransformValues = [5, -11, -27, -44]
+
+
+for(let i=0; i<cardAll.length; i++) {
+    childImgAll[i].addEventListener("mouseenter", () => {
+        childImgAll[i].style.filter = "none";
+        childInfoAll[i].style.animation = "card-info 1s forwards";
+        cardAll[i].style.animation = "card 1s forwards";
+        cardSlider.style.transform = "translateX("+sliderTransformValues[i]+"em)"
+    })
+    childImgAll[i].addEventListener("mouseleave", () => {
+        childImgAll[i].style.filter = "grayscale(100%)";
+        childInfoAll[i].style.animation = "card-info-reverse 1s forwards";
+        cardAll[i].style.animation = "card-reverse 1s forwards";
+    })
+}

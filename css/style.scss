@@ -432,10 +432,14 @@ main {
 
 .slide5 {
     background: linear-gradient(wheat 10%, white);
+    overflow-x: hidden;
     .card-slider {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+        gap: 1em;
+        transform: translateX(5em);
+        transition: transform 1s;
 
         .card {
             display: flex;
@@ -443,7 +447,7 @@ main {
             justify-content: center;
             gap: 1em;
             height: 100vw;
-            width: 60vw;
+            width: 50vw;
             transform: translateY(10em);
             @keyframes card {
                 from {
