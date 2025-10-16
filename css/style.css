@@ -133,33 +133,7 @@ main .main-cta .transparent-button img {
   border-radius: 50%;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-top: 1px solid black;
-  padding-top: 2em;
-  justify-content: space-between;
-}
-footer ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  list-style: none;
-  padding-left: 0;
-}
-footer ul img {
-  height: 3em;
-  margin: 1em;
-}
-footer ul li:nth-child(3) img {
-  height: 2em;
-}
-footer button {
-  display: none;
-}
-
-.slide1, .slide2, .slide3, .slide4 {
+.slide {
   transition: all 2s;
   height: 100vh;
   display: flex;
@@ -170,18 +144,44 @@ footer button {
   overflow-y: clip;
 }
 
-.slide2 main, .slide3 main, .slide4 main {
+.slide1 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid black;
+  padding-top: 2em;
+  justify-content: space-between;
+}
+.slide1 footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  padding-left: 0;
+}
+.slide1 footer ul img {
+  height: 3em;
+  margin: 1em;
+}
+.slide1 footer ul li:nth-child(3) img {
+  height: 2em;
+}
+.slide1 footer button {
+  display: none;
+}
+
+.slide2 main, .slide3 main, .slide4 main, .slide5 main {
   z-index: 1;
   font-size: smaller;
   margin-bottom: 0;
 }
-.slide2 main p, .slide3 main p, .slide4 main p {
+.slide2 main p, .slide3 main p, .slide4 main p, .slide5 main p {
   background-color: aqua;
   padding: 0.3em 0.7em;
   border-radius: 0.5em;
   margin-top: 3em;
 }
-.slide2 .card-area, .slide3 .card-area, .slide4 .card-area {
+.slide2 .card-area, .slide3 .card-area, .slide4 .card-area, .slide5 .card-area {
   margin: 2em 0;
   padding-top: 1em;
   display: grid;
@@ -189,7 +189,7 @@ footer button {
   grid-template-rows: auto auto;
   gap: 1em;
 }
-.slide2 .card-area .card, .slide3 .card-area .card, .slide4 .card-area .card {
+.slide2 .card-area .card, .slide3 .card-area .card, .slide4 .card-area .card, .slide5 .card-area .card {
   display: flex;
   flex-direction: column;
   height: 12em;
@@ -201,12 +201,12 @@ footer button {
   text-align: left;
   padding: 1.5em;
 }
-.slide2 .card-area .card:hover, .slide3 .card-area .card:hover, .slide4 .card-area .card:hover {
+.slide2 .card-area .card:hover, .slide3 .card-area .card:hover, .slide4 .card-area .card:hover, .slide5 .card-area .card:hover {
   background: linear-gradient(wheat, white);
   cursor: pointer;
   font-size: 100%;
 }
-.slide2 .card-area .card p, .slide3 .card-area .card p, .slide4 .card-area .card p {
+.slide2 .card-area .card p, .slide3 .card-area .card p, .slide4 .card-area .card p, .slide5 .card-area .card p {
   background-color: transparent;
   margin: 0;
   padding: 0;
@@ -397,6 +397,92 @@ footer button {
 .slide4 .form form .checkbox input {
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.slide5 {
+  background: linear-gradient(wheat 10%, white);
+}
+.slide5 .card-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide5 .card-slider .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  height: 100vw;
+  width: 60vw;
+  transform: translateY(10em);
+}
+@keyframes card {
+  from {
+    transform: translateY(10em);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes card-reverse {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10em);
+  }
+}
+.slide5 .card-slider .card img {
+  width: 100%;
+  border-radius: 2em;
+  filter: grayscale(100%);
+  transition: all 1s;
+}
+.slide5 .card-slider .card .info {
+  opacity: 0;
+  width: calc(100% - 2em);
+  height: 26%;
+  background-color: white;
+  border-radius: 1em;
+  border: 1px solid gray;
+  font-size: 0.7em;
+  padding: 0.5em 1em;
+}
+@keyframes card-info {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes card-info-reverse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.slide5 .card-slider .card .info .name {
+  font-weight: bold;
+}
+.slide5 .card-slider .card .info .amount-percentage {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.slide5 .card-slider .card .info .amount-percentage p {
+  margin: 0.5em 0;
+}
+.slide5 .card-slider .card .info .amount-percentage .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: grey;
+  grid-column: 2 span;
 }
 
 .move-dot {

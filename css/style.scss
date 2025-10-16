@@ -144,38 +144,9 @@ main {
 }
 
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid black;
-    padding-top: 2em;
-    justify-content: space-between;
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        list-style: none;
-        padding-left: 0;
-        img {
-            height: 3em;
-            margin: 1em;
-        }
-        li {
-            &:nth-child(3) img{
-                height: 2em;
-            }
-        }
-    }
-    button {
-        display: none;
-    }
-}
-
-
 
 // Slide-Specific Code
-.slide1, .slide2, .slide3, .slide4{
+.slide {
     transition: all 2s;
     height: calc(100vh);
     display: flex;
@@ -186,8 +157,38 @@ footer {
     overflow-y: clip;
 }
 
+.slide1 {
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid black;
+        padding-top: 2em;
+        justify-content: space-between;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+            padding-left: 0;
+            img {
+                height: 3em;
+                margin: 1em;
+            }
+            li {
+                &:nth-child(3) img{
+                    height: 2em;
+                }
+            }
+        }
+        button {
+            display: none;
+        }
+    }
+}
 
-.slide2, .slide3, .slide4 {
+
+.slide2, .slide3, .slide4, .slide5 {
     main {
         z-index: 1;
         font-size: smaller;
@@ -231,9 +232,6 @@ footer {
         }
     }
 }
-
-
-
 
 .slide3 {
     overflow-x: hidden;
@@ -431,6 +429,96 @@ footer {
     }
 
 }
+
+.slide5 {
+    background: linear-gradient(wheat 10%, white);
+    .card-slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1em;
+            height: 100vw;
+            width: 60vw;
+            transform: translateY(10em);
+            @keyframes card {
+                from {
+                    transform: translateY(10em);
+                }
+                to {
+                    transform: translateY(0);
+                }
+            }
+            @keyframes card-reverse {
+                from {
+                    transform: translateY(0);
+                }
+                to {
+                    transform: translateY(10em);
+                }
+            }
+
+
+            img {
+                width: 100%;
+                border-radius: 2em;
+                filter: grayscale(100%);
+                transition: all 1s;
+            }
+            .info {
+                opacity: 0;
+                width: calc(100% - 2em);
+                height: 26%;
+                background-color: white;
+                border-radius: 1em;
+                border: 1px solid gray;
+                font-size: 0.7em;
+                padding: 0.5em 1em;
+                @keyframes card-info {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+                @keyframes card-info-reverse {
+                    from {
+                        opacity: 1;
+                    }
+                    to {
+                        opacity: 0;
+                    }
+                }
+                .name {
+                    font-weight: bold;
+                }
+                .amount-percentage {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto;
+                    justify-content: space-between;
+                    align-items: center;
+                    p {
+                        margin: 0.5em 0;
+                    }
+                    .line {
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        background-color:grey;
+                        grid-column: 2 span;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 
